@@ -12,8 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('index');
+})->middleware('auth');
 
 Route::resource('questions','QuestionController');
 Route::resource('answers', 'AnswerController');
@@ -21,3 +21,4 @@ Route::resource('answers', 'AnswerController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
