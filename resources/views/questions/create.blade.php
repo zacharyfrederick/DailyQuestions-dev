@@ -1,14 +1,13 @@
-@extends('layouts/app')
+@extends('layout')
 
 @section('content')
-<div class='container'>
-    {!! Form::open(['action' => 'QuestionController@store', 'method' => 'post']) !!}
+    @include('inc.messages')
+    <h3>Create a new DailyQuestion</h3>
+    {{ Form::open(['action' => 'QuestionController@store', 'method'=>'post']) }}
         <div class='form-group'>
-            {{Form::label('title', 'Question')}}
-            {{Form::text('question', '', ['class' => 'form-control', 'placeholder'=> 'Enter your daily question'])}}
-            {{Form::checkbox('Binary', 'value') }}
+            {{Form::label('question', 'Question')}}
+            {{Form::text('question', '',['class' => 'form-control', 'placeholder' => 'Enter your question'])}}
         </div>
-        {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
-    {!! Form::close() !!}
-</div>
+        {{Form::submit('Create', ['class'=>'btn btn-primary'])}}
+    {{Form::close()}}
 @endsection
