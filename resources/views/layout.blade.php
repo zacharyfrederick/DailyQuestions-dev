@@ -69,7 +69,9 @@
 
             <!-- Content -->
             
-            @yield('content')
+            <div class='container-fluid'>
+                @yield('content')
+            </div>
     </div>
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
